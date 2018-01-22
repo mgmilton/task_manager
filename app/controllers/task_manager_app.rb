@@ -27,6 +27,14 @@ class TaskManagerApp < Sinatra::Base
     erb :edit
   end
 
+  get '/easteregg' do
+    erb :easteregg
+  end
+
+  get '/showmethetasks' do
+    redirect '/tasks'
+  end
+
   post '/tasks' do
     task = Task.new(params[:task])
     task.save
